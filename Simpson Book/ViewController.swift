@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
      // Simpson Arrayi oluşturmak.
     var mySimpsons = [Simpson]()
+    var chosenSimpson : Simpson?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // her bir rowda ilgili index gösterilecek
         cell.textLabel?.text = mySimpsons[indexPath.row].name // mySimpsons içindeki objelerin isimlerini text labele eşitlemek
         return cell
+    }
+    
+    // Seçilen simpsonu aktarmak + Segue ile eşitlemek
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenSimpson = mySimpsons[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    // toDetailsVC seguesine tıklandıysa
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC"  {
+            let destinationVC = segue.destination as! detailsVC
+            destinationVC.selectedSimpson = chosenSimpson
+        }
     }
 
 
