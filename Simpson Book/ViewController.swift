@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+     // Simpson Arrayi oluşturmak.
+    var mySimpsons = [Simpson]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,21 +32,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let bebe = Simpson(simpsonName: "Bebe", simpsonJob: "Unknown", simpsonImage: UIImage(named: "bebe")!)
         let lisa = Simpson(simpsonName: "Lisa", simpsonJob: "Student", simpsonImage: UIImage(named: "lisa")!)
          
-        let homerArray = [homer,barth,bebe,lisa]
+        // arraye yerleştirmek
+        
+        mySimpsons.append(homer)
+        mySimpsons.append(barth)
+        mySimpsons.append(lisa)
+        mySimpsons.append(bebe)
+        
+      
         
     }
     
     //numberof section kaç row olacağını zorunlu olarak tanımlamamız gerekiyor. return değeri gösterir
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        // mySimpsons arrayinin countuna eşitledik.
+        return mySimpsons.count
     }
     
     // nasıl bir sıra olacağı cellforrow ile
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Homer Simpson"
+        // her bir rowda ilgili index gösterilecek
+        cell.textLabel?.text = mySimpsons[indexPath.row].name // mySimpsons içindeki objelerin isimlerini text labele eşitlemek
         return cell
     }
 
