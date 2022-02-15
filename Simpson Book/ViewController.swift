@@ -21,6 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
+        //Simpson Objects
+        let homer = Simpson(simpsonName: "Homer", simpsonJob: "Nuclear Safety", simpsonImage: UIImage(named: "eric")!)
+         
     }
     
     //numberof section kaç row olacağını zorunlu olarak tanımlamamız gerekiyor. return değeri gösterir
