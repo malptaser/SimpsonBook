@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let bebe = Simpson(simpsonName: "Bebe", simpsonJob: "Unknown", simpsonImage: UIImage(named: "bebe")!)
         let lisa = Simpson(simpsonName: "Lisa", simpsonJob: "Student", simpsonImage: UIImage(named: "lisa")!)
          
+        let homerArray = [homer,barth,bebe,lisa]
+        
     }
     
     //numberof section kaç row olacağını zorunlu olarak tanımlamamız gerekiyor. return değeri gösterir
