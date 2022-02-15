@@ -25,6 +25,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Simpson Objects
         let homer = Simpson(simpsonName: "Homer", simpsonJob: "Nuclear Safety", simpsonImage: UIImage(named: "eric")!)
+        let barth = Simpson(simpsonName: "Barth", simpsonJob: "Student", simpsonImage: UIImage(named: "barth")!)
+        let bebe = Simpson(simpsonName: "Bebe", simpsonJob: "Unknown", simpsonImage: UIImage(named: "bebe")!)
+        let lisa = Simpson(simpsonName: "Lisa", simpsonJob: "Student", simpsonImage: UIImage(named: "lisa")!)
          
     }
     
